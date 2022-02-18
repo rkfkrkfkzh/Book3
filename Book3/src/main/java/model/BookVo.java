@@ -8,6 +8,7 @@ public class BookVo {
 	private String content;
 
 	public BookVo(int num, String title, String author, String publisher, String content) {
+		//4개의 매개변수를 갖는 생성자를 정의
 		super();
 		this.num = num;
 		this.title = title;
