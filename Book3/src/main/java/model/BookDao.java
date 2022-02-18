@@ -63,7 +63,7 @@ public class BookDao {
 			this.pstmt.setString(3, p.getPublisher());
 			this.pstmt.setString(4, p.getContent());
 			this.pstmt.executeUpdate();
-		} catch (Exception var7) {
+		} catch (Exception var7) { 
 			System.out.println(var7);
 		} finally {
 			this.discon();
@@ -73,11 +73,11 @@ public class BookDao {
 
 	public ArrayList<BookVo> getAll() {
 		this.con();
-		ArrayList<BookVo> list = new ArrayList<BookVo>();
-		String sql = "select * from book order by num";
+		ArrayList<BookVo> list = new ArrayList<BookVo>(); //연결
+		String sql = "select * from book order by num"; // SQL 문장 만들고
 
 		try {
-			this.stmt = this.conn.createStatement();
+			this.stmt = this.conn.createStatement(); // 위에서 만든 SQL문장이 오라클로 넘어갔다
 			this.rs = this.stmt.executeQuery(sql);
 
 			while (this.rs.next()) {
